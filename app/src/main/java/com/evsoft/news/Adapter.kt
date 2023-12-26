@@ -1,13 +1,13 @@
 package com.evsoft.news
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class NewsAdapter(private var newsList: List<Article>) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter(private var newsList: List<Article>) :
+    RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.news_title)
@@ -15,7 +15,8 @@ class NewsAdapter(private var newsList: List<Article>) : RecyclerView.Adapter<Ne
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.news_list_item, parent, false)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.news_list_item, parent, false)
         return NewsViewHolder(itemView)
     }
 
